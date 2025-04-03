@@ -1,0 +1,1133 @@
+inventories:
+  main-menu:
+    # Set to false to not show the /ps menu.
+    enabled: true
+    # The title of the inventory.
+    name: "&8☀ Protection selector"
+    # The size of the inventory.
+    # Must be a multiple of 9. (9, 18, 27, 36, 45, 54)
+    size: 36
+
+    # In this section you will not be able to add new items to the menu, only edit the current ones.
+    # If you want to add more items use the custom-items section:
+    items:
+      list:
+        material: COMPASS
+        slot: 11
+        amount: 1
+        model_data: 0
+        display_name: '&aView all your protections'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - "&8List of protections"
+          - ""
+          - "&8 | &fOpen the protection list menu."
+          - "&f Here you can easily teleport."
+          - ""
+          - "&eClick to open menu!"
+      current:
+        slot: 13
+        showing:
+          material: END_PORTAL_FRAME
+          amount: 1
+          display_name: '&aCurrent Protection'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore:
+            - "&8Information"
+            - ""
+            - "&8 | &fProtection: &7(&a<block>&7)"
+            - "&8 | &fName: &a<name>"
+            - "&8 | &fOwners: &c<owners>"
+            - ""
+            - "&eClick here to manage!"
+        none:
+          material: BARRIER
+          amount: 1
+          display_name: '&aNo Protection'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore:
+            - "&8Information"
+            - ""
+            - "&cThere is no protection at your location."
+            - ""
+
+      buttons:
+        close:
+          enabled: true
+          material: BOOK
+          slot: 31
+          amount: 1
+          model_data: 0
+          display_name: '&cClose'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: [ ]
+
+
+
+    # In this section you can add more items to the inventory.
+    custom-items: [ ]
+    #  info:
+    #    material: FILLED_MAP
+    #    slot: 15
+    #    amount: 1
+    #    model_data: 0
+    #    glowing: false
+    #    item_flags:
+    #    - HIDE_ATTRIBUTES
+    #    display_name: '&cYour Information'
+    #    lore:
+    #      - "&8Basic Information"
+    #      - ""
+    #      - "&fPlayer: &a%player_name%"
+    #    actions:
+    #      - "[message] test"
+
+  homes:
+
+    # The title of the inventory.
+    name: "&8☀ Homes Selector - [<page> / <totalpages>]"
+
+    # The size of the inventory.
+    # Must be a multiple of 9. (9, 18, 27, 36, 45, 54)
+    size: 54
+
+    # In this section you will not be able to add new items to the menu, only edit the current ones.
+    # If you want to add more items use the custom-items section:
+    items:
+      icons:
+        # These will be the slots in which the protections will be automatically placed.
+        slot: 10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34,37,38,39,40,41,42,43
+        material: "" # Empty to use the block material
+        amount: 1
+        display_name: '&fProtection: &a<name>'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        click_type:
+          - left;teleport
+          - right;manage
+        # - both;teleport  #| To use any click (right or left)
+        # - drop;manage #| To use the button when launching things
+        lore:
+          - "&8ɪɴғᴏʀᴍᴀᴛɪᴏɴ"
+          - ""
+          - "&8■ &fOwners:&c <owners>"
+          - "&8■ &fMembers: &e<members>"
+          - "&8"
+          - "&8■ &fLoc: &a<location>"
+          - " &7- X: &a<x>"
+          - " &7- Y: &a<y>"
+          - " &7- Z: &a<z>"
+          - " &7- World: &a<world>"
+          - ""
+      # This will be displayed just below the lore depending on which click you are using.
+      clicked:
+        drop: "&e► Click to manage!"
+        both: "&e► Click to teleport!"
+        left: "&e► Left Click teleport!"
+        right: "&e► Right Click manage!"
+
+      sort:
+        material: COMPARATOR
+        seconds: 5
+        slot: 50
+        amount: 1
+        display_name: '&aSorted by:'
+        glowing: false
+        lore:
+          all:
+            - ""
+            - "&a> &lALL"
+            - "&7 Miembros"
+            - "&7 Owners"
+            - "&7 World"
+            - ""
+            - "&e► Click to order"
+          member:
+            - ""
+            - "&7 ALL"
+            - "&a> &lMiembros"
+            - "&7 Owners"
+            - "&7 World"
+            - ""
+            - "&e► Click to order"
+          owner:
+            - ""
+            - "&7 ALL"
+            - "&7 Miembros"
+            - "&a> &lOwners"
+            - "&7 World"
+            - ""
+            - "&e► Click to order"
+          world:
+            - ""
+            - "&7 ALL"
+            - "&7 Miembros"
+            - "&7 Owners"
+            - "&a> &lWorld"
+            - ""
+            - "&e► Click to order"
+
+      without:
+        material: RED_STAINED_GLASS_PANE
+        slot: 22
+        amount: 1
+        display_name: '&aYou have no protection'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - ""
+          - "&eUse the /protections command "
+          - "&eto purchase your protective block."
+          - ""
+
+      # The buttons will only appear if there are pages to go forward or backward.
+      buttons:
+        next:
+          enabled: true
+          material: ARROW
+          slot: 53
+          amount: 1
+          display_name: '&cNext page'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: [ ]
+        previous:
+          enabled: true
+          material: ARROW
+          slot: 45
+          amount: 1
+          display_name: '&cPrevious page'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: [ ]
+        close:
+          enabled: true
+          material: BOOK
+          slot: 49
+          amount: 1
+          model_data: 0
+          display_name: '&cClose'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: []
+        back:
+          enabled: true
+          material: ARROW
+          slot: 48
+          amount: 1
+          model_data: 0
+          display_name: '&cBack'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: []
+
+    # In this section you can add more items to the inventory.
+    custom-items: [ ]
+    #  close:
+    #    material: BOOK
+    #    slot: 49
+    #    amount: 1
+    #    model_data: 0
+    #    glowing: false
+    #    item_flags:
+    #      - HIDE_ATTRIBUTES
+    #    display_name: '&cClose'
+    #    lore: [ ]
+    #    actions:
+    #      - "[close]"
+    #  back:
+    #    material: ARROW
+    #    slot: 48
+    #    amount: 1
+    #    model_data: 0
+    #    glowing: false
+    #    item_flags:
+    #      - HIDE_ATTRIBUTES
+    #    display_name: '&cBack'
+    #    lore: [ ]
+    #    actions:
+    #      - "[openmenu] main-menu"
+
+  settings:
+    # The title of the inventory.
+    name: "&8☀ Home Editor <home>"
+
+    # The size of the inventory.
+    # Must be a multiple of 9. (9, 18, 27, 36, 45, 54)
+    size: 36
+
+    # In this section you will not be able to add new items to the menu, only edit the current ones.
+    # If you want to add more items use the custom-items section:
+    items:
+      icon:
+        slot: 4
+        display_name: '&a<name>'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - "&a%player_name%"
+      flags:
+        enabled: true
+        material: RED_BANNER
+        slot: 10
+        amount: 1
+        display_name: '&aEdit Flags'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - "&eEdit your protection flags!"
+      state:
+        enabled: true
+        unhide:
+          material: GRAY_DYE
+          slot: 15
+          amount: 1
+          display_name: '&aUnHide Protection'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore:
+            - "&eShow protection block!"
+        hide:
+          material: LIME_DYE
+          slot: 15
+          amount: 1
+          display_name: '&aHide Protection'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore:
+            - "&eHide protection block!"
+      priority:
+        enabled: true
+        material: LECTERN
+        slot: 13
+        amount: 1
+        display_name: '&aPriority Protection'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - "&eChange the priority of your protection!"
+      rename:
+        enabled: true
+        material: NAME_TAG
+        slot: 14
+        amount: 1
+        display_name: '&aRename Protection'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - "&eRename your protection!"
+      sethome:
+        enabled: true
+        material: DARK_OAK_DOOR
+        slot: 16
+        amount: 1
+        display_name: '&aSet Sethome'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - "&eSet your protection sethome!"
+      view:
+        enabled: true
+        material: CHEST
+        slot: 11
+        amount: 1
+        display_name: '&aView'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - "&eYou will be able to see the edges of your protection!"
+      owners:
+        enabled: true
+        material: SADDLE
+        slot: 21
+        amount: 1
+        display_name: '&aOwner List'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - "&eYou can see the list of owners!"
+      members:
+        enabled: true
+        material: RED_CANDLE
+        slot: 23
+        amount: 1
+        display_name: '&aList of members'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - "&eYou can see the list of members!"
+      teleport:
+        enabled: true
+        material: ENDER_PEARL
+        slot: 12
+        amount: 1
+        display_name: '&aTeletransport'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - "&eTeleport to your protection!"
+      banned:
+        enabled: false
+        material: SEA_LANTERN
+        slot: 22
+        amount: 1
+        display_name: '&aList of banned members'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - "&eYou can view the banned list"
+
+      buttons:
+        close:
+          enabled: true
+          material: BOOK
+          slot: 31
+          amount: 1
+          model_data: 0
+          display_name: '&cClose'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: [ ]
+        back:
+          enabled: true
+          material: ARROW
+          slot: 30
+          amount: 1
+          model_data: 0
+          display_name: '&cBack'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: []
+
+    # In this section you can add more items to the inventory.
+    custom-items: [ ]
+    #  back:
+    #    material: ARROW
+    #    slot: 30
+    #    amount: 1
+    #    model_data: 0
+    #    glowing: false
+    #    item_flags:
+    #      - HIDE_ATTRIBUTES
+    #    display_name: '&cBack'
+    #    lore: [ ]
+    #    actions:
+    #      - "[openmenu] homes"
+
+  flags:
+
+    # The title of the inventory.
+    name: "&8☀ Flags Editor - [<page> / <totalpages>]"
+
+    # The size of the inventory.
+    # Must be a multiple of 9. (9, 18, 27, 36, 45, 54)
+    size: 54
+
+    # In this section you will not be able to add new items to the menu, only edit the current ones.
+    # If you want to add more items use the custom-items section:
+    items:
+      icons:
+        # These will be the slots in which the flags will be automatically placed.
+        slot: 10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34,37,38,39,40,41,42,43
+        display_name: '&aEdit Flag <flag>'
+        click_type:
+          - left;groups
+          - right;flag
+        # - both;groups
+        # - drop;flag
+        lore:
+          - "&8ᴄᴏɴғɪɢᴜʀᴀʙʟᴇ ғʟᴀɢ"
+          - ""
+          - "&7 <description>"
+          - ""
+          - "&6 ☀ ɪɴғᴏʀᴍᴀᴛɪᴏɴ"
+          - "&8➞ &fState: &a<state>"
+          - "&8➞ &fGroup: &a<group>"
+          - ""
+      clicked:
+        textflag: "&e► Click to add a text!"
+        drop: "&e► Drop - Toggle groups!"
+        both: "&e► Right click - Activate or deactivate the flag!"
+        left: "&e► Left Click - Toggle groups!"
+        right: "&e► Right click - Activate or deactivate the flag!"
+        noperms: "&c► You do not have permissions"
+
+      # The buttons will only appear if there are pages to go forward or backward.
+      buttons:
+        next:
+          enabled: true
+          material: ARROW
+          slot: 53
+          amount: 1
+          display_name: '&cNext page'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: [ ]
+        previous:
+          enabled: true
+          material: ARROW
+          slot: 45
+          amount: 1
+          display_name: '&cPrevious page'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: [ ]
+        close:
+          enabled: true
+          material: BOOK
+          slot: 49
+          amount: 1
+          model_data: 0
+          display_name: '&cClose'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: [ ]
+        back:
+          enabled: true
+          material: ARROW
+          slot: 48
+          amount: 1
+          model_data: 0
+          display_name: '&cBack'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: []
+
+    # In this section you can add more items to the inventory.
+    custom-items: [ ]
+    #  back:
+    #    material: ARROW
+    #    slot: 48
+    #    amount: 1
+    #    model_data: 0
+    #    glowing: false
+    #    item_flags:
+    #      - HIDE_ATTRIBUTES
+    #    display_name: '&cBack'
+    #    lore: [ ]
+    #    actions:
+    #      - "[openmenu] settings"
+
+  member:
+    # The title of the inventory.
+    name: "&8☀ List of members (<total>)"
+
+    # The size of the inventory.
+    # Must be a multiple of 9. (9, 18, 27, 36, 45, 54)
+    size: 54
+
+    # In this section you will not be able to add new items to the menu, only edit the current ones.
+    # If you want to add more items use the custom-items section:
+    items:
+      icons:
+        # These will be the slots in which the members will be automatically placed.
+        slot: 10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34,37,38,39,40,41,42,43
+        display_name: '&a<member>'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - "&8Member"
+          - ""
+          - "&8 | &fYou will be able to "
+          - "&f manage this member"
+          - ""
+          - "&eClick to manage!"
+      add:
+        material: BEACON
+        slot: 50
+        amount: 1
+        display_name: "&aAdd New Member"
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - "&8Protection"
+          - ""
+          - "&8 | &fAdd a new member to your"
+          - "&f current protection."
+          - ""
+          - "&eClick to add new member!"
+
+      # The buttons will only appear if there are pages to go forward or backward.
+      buttons:
+        next:
+          enabled: true
+          material: ARROW
+          slot: 53
+          amount: 1
+          display_name: '&cNext page'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: [ ]
+        previous:
+          enabled: true
+          material: ARROW
+          slot: 45
+          amount: 1
+          display_name: '&cPrevious page'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: [ ]
+        close:
+          enabled: true
+          material: BOOK
+          slot: 49
+          amount: 1
+          model_data: 0
+          display_name: '&cClose'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: [ ]
+        back:
+          enabled: true
+          material: ARROW
+          slot: 48
+          amount: 1
+          model_data: 0
+          display_name: '&cBack'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: []
+
+    # In this section you can add more items to the inventory.
+    custom-items: [ ]
+    #  back:
+    #    material: ARROW
+    #    slot: 48
+    #    amount: 1
+    #    model_data: 0
+    #    glowing: false
+    #    item_flags:
+    #      - HIDE_ATTRIBUTES
+    #    display_name: '&cBack'
+    #    lore: [ ]
+    #    actions:
+    #      - "[openmenu] settings"
+
+  owner:
+    # The title of the inventory.
+    name: "&8☀ List of Owners (<total>)"
+
+    # The size of the inventory.
+    # Must be a multiple of 9. (9, 18, 27, 36, 45, 54)
+    size: 54
+
+    # In this section you will not be able to add new items to the menu, only edit the current ones.
+    # If you want to add more items use the custom-items section:
+    items:
+      icons:
+        # These will be the slots in which the owners will be automatically placed.
+        slot: 10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34,37,38,39,40,41,42,43
+        display_name: '&a<owner>'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - "&8Onwer"
+          - ""
+          - "&8 | &fYou will be able to "
+          - "&f manage this owner"
+          - ""
+          - "&eClick to manage!"
+      add:
+        material: BEACON
+        slot: 50
+        amount: 1
+        display_name: "&aAdd New Owner"
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - "&8Protection"
+          - ""
+          - "&8 | &fAdd a new member to your"
+          - "&f current protection."
+          - ""
+          - "&eClick to add new member!"
+      # The buttons will only appear if there are pages to go forward or backward.
+      buttons:
+        next:
+          enabled: true
+          material: ARROW
+          slot: 53
+          amount: 1
+          display_name: '&cNext page'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: [ ]
+        previous:
+          enabled: true
+          material: ARROW
+          slot: 45
+          amount: 1
+          display_name: '&cPrevious page'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: [ ]
+        close:
+          enabled: true
+          material: BOOK
+          slot: 49
+          amount: 1
+          model_data: 0
+          display_name: '&cClose'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: [ ]
+        back:
+          enabled: true
+          material: ARROW
+          slot: 48
+          amount: 1
+          model_data: 0
+          display_name: '&cBack'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: []
+    # In this section you can add more items to the inventory.
+    custom-items: [ ]
+    #  close:
+    #    material: BOOK
+    #    slot: 49
+    #    amount: 1
+    #    model_data: 0
+    #    glowing: false
+    #    item_flags:
+    #      - HIDE_ATTRIBUTES
+    #    display_name: '&cClose'
+    #    lore: [ ]
+    #    actions:
+    #      - "[close]"
+    #  back:
+    #    material: ARROW
+    #    slot: 48
+    #    amount: 1
+    #    model_data: 0
+    #    glowing: false
+    #    item_flags:
+    #      - HIDE_ATTRIBUTES
+    #    display_name: '&cBack'
+    #    lore: [ ]
+    #    actions:
+    #      - "[openmenu] settings"
+
+  manage:
+    # The title of the inventory.
+    name: "&8☀ Manage (<manage>)"
+
+    # The size of the inventory.
+    # Must be a multiple of 9. (9, 18, 27, 36, 45, 54)
+    size: 36
+
+    player:
+      enabled: true
+      slot: 10
+      display_name: '&fManage to: &a<manage>'
+      glowing: false
+      item_flags:
+        - HIDE_ATTRIBUTES
+      lore:
+        - '&8Management'
+        - ''
+        - '&8 | &fIn this menu you can ban'
+        - '&f   kick, remove add or demote'
+        - '&f   as owner.'
+        - ''
+    member-items:
+      ban:
+        enabled: true
+        material: REDSTONE_BLOCK
+        amount: 1
+        slot: 12
+        model_data: 0
+        display_name: '&e&lBAN'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - ''
+          - '&8 | &fClick to ban the player '
+          - "&f   from your protection so they can't"
+          - '&f   enter in any way.'
+          - ''
+          - '&e► Click to ban <manage>!'
+      kick:
+        enabled: true
+        material: ANVIL
+        amount: 1
+        slot: 13
+        model_data: 0
+        display_name: '&e&lKICK'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - ''
+          - '&8 | &fClick to kick the player '
+          - "&f   from your protection."
+          - ''
+          - '&e► Click to ban <manage>!'
+      remove:
+        enabled: true
+        material: BARRIER
+        amount: 1
+        slot: 14
+        model_data: 0
+        display_name: '&e&lREMOVE'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - ''
+          - '&8 | &fClick to remove the player '
+          - "&f   from your protection."
+          - ''
+          - '&e► Click to remove <manage>!'
+      set-owner:
+        enabled: true
+        material: TARGET
+        amount: 1
+        slot: 15
+        model_data: 0
+        display_name: '&e&lESTABLECER OWNER'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - ''
+          - '&8 | &fClick to set the player '
+          - "&f   from your protection as a owner."
+          - ''
+          - '&e► Click to set <manage> as owner!'
+
+      buttons:
+        close:
+          enabled: true
+          material: BOOK
+          slot: 31
+          amount: 1
+          model_data: 0
+          display_name: '&cClose'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: []
+
+        back:
+          enabled: true
+          material: ARROW
+          slot: 30
+          amount: 1
+          model_data: 0
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          display_name: '&cBack'
+          lore: []
+
+
+    owner-items:
+      ban:
+        enabled: true
+        material: REDSTONE_BLOCK
+        amount: 1
+        slot: 12
+        model_data: 0
+        display_name: '&e&lBAN'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - ''
+          - '&8 | &fClick to ban the player '
+          - "&f   from your protection so they can't"
+          - '&f   enter in any way.'
+          - ''
+          - '&e► Click to ban <manage>!'
+      kick:
+        enabled: true
+        material: ANVIL
+        amount: 1
+        slot: 13
+        model_data: 0
+        display_name: '&e&lKICK'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - ''
+          - '&8 | &fClick to kick the player '
+          - "&f   from your protection."
+          - ''
+          - '&e► Click to ban <manage>!'
+      remove:
+        enabled: true
+        material: BARRIER
+        amount: 1
+        slot: 14
+        model_data: 0
+        display_name: '&e&lREMOVE'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - ''
+          - '&8 | &fClick to remove the player '
+          - "&f   from your protection."
+          - ''
+          - '&e► Click to remove <manage>!'
+      set-member:
+        enabled: true
+        material: TARGET
+        amount: 1
+        slot: 15
+        model_data: 0
+        display_name: '&e&lESTABLECER OWNER'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - ''
+          - '&8 | &fClick to set the player '
+          - "&f   from your protection as a member."
+          - ''
+          - '&e► Click to set <manage> as member!'
+
+      buttons:
+        close:
+          enabled: true
+          material: BOOK
+          slot: 31
+          amount: 1
+          model_data: 0
+          display_name: '&cClose'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: []
+
+        back:
+          enabled: true
+          material: ARROW
+          slot: 30
+          amount: 1
+          model_data: 0
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          display_name: '&cBack'
+          lore: []
+
+    # In this section you can add more items to the inventory.
+    custom-items: []
+
+  admin-homes:
+    # The title of the inventory.
+    name: "&8☀ Homes - <target> [<page> / <totalpages>]"
+
+    # The size of the inventory.
+    # Must be a multiple of 9. (9, 18, 27, 36, 45, 54)
+    size: 54
+
+    items:
+      icons:
+        slot: 10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34,37,38,39,40,41,42,43
+        material: ""
+        amount: 1
+        display_name: '&fProtection: &a<name>'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - "&8ɪɴғᴏʀᴍᴀᴛɪᴏɴ"
+          - ""
+          - "&8■ &fOwners:&c <owners>"
+          - "&8■ &fMembers: &e<members>"
+          - "&8"
+          - "&8■ &fLoc: &a<location>"
+          - " &7- X: &a<x>"
+          - " &7- Y: &a<y>"
+          - " &7- Z: &a<z>"
+          - " &7- World: &a<world>"
+          - ""
+          - "&a► Left Click teleport!"
+
+      # The buttons will only appear if there are pages to go forward or backward.
+      buttons:
+        next:
+          material: ARROW
+          slot: 53
+          amount: 1
+          display_name: '&cNext page'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: [ ]
+        previous:
+          material: ARROW
+          slot: 45
+          amount: 1
+          display_name: '&cPrevious page'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: [ ]
+        close:
+          enabled: true
+          material: BOOK
+          slot: 49
+          amount: 1
+          model_data: 0
+          display_name: '&cClose'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: []
+
+
+    # In this section you can add more items to the inventory.
+    custom-items: [ ]
+
+  banned-list:
+    # The title of the inventory.
+    name: "&8☀ List of Banned (<total>)"
+
+    # The size of the inventory.
+    # Must be a multiple of 9. (9, 18, 27, 36, 45, 54)
+    size: 54
+
+    # In this section you will not be able to add new items to the menu, only edit the current ones.
+    # If you want to add more items use the custom-items section:
+    items:
+      icons:
+        # These will be the slots in which the members will be automatically placed.
+        slot: 10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34,37,38,39,40,41,42,43
+        display_name: '&aBanned: <banned>'
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - "&8Information"
+          - ""
+          - "&8 | &fThis is a banned user and "
+          - "&f you can unban him right here"
+          - ""
+          - "&eClick to unban!"
+
+      add:
+        material: BEACON
+        slot: 50
+        amount: 1
+        display_name: "&aAdd New Banned"
+        glowing: false
+        item_flags:
+          - HIDE_ATTRIBUTES
+        lore:
+          - "&8Protection"
+          - ""
+          - "&8 | &fAdd a new banned person"
+          - "&f to your current protection."
+          - ""
+          - "&eClick to add new banned!"
+
+      # The buttons will only appear if there are pages to go forward or backward.
+      buttons:
+        next:
+          enabled: true
+          material: ARROW
+          slot: 53
+          amount: 1
+          display_name: '&cNext page'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: [ ]
+        previous:
+          enabled: true
+          material: ARROW
+          slot: 45
+          amount: 1
+          display_name: '&cPrevious page'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: [ ]
+        close:
+          enabled: true
+          material: BOOK
+          slot: 49
+          amount: 1
+          model_data: 0
+          display_name: '&cClose'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: []
+        back:
+          enabled: true
+          material: ARROW
+          slot: 48
+          amount: 1
+          model_data: 0
+          display_name: '&cBack'
+          glowing: false
+          item_flags:
+            - HIDE_ATTRIBUTES
+          lore: []
+    # In this section you can add more items to the inventory.
+    custom-items: [ ]
+    #  back:
+    #    material: ARROW
+    #    slot: 48
+    #    amount: 1
+    #    model_data: 0
+    #    glowing: false
+    #    item_flags:
+    #      - HIDE_ATTRIBUTES
+    #    display_name: '&cBack'
+    #    lore: [ ]
+    #    actions:
+    #      - "[openmenu] settings"
+
+file-version: 5
